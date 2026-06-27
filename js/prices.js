@@ -20,7 +20,14 @@ const lastUpdated = document.getElementById('lastUpdated');
 const refreshBtn = document.getElementById('refreshBtn');
 const errorContainer = document.getElementById('errorContainer');
 
+/**
+ * Safely formats price numbers. 
+ * Prevents crashes if data is missing or undefined.
+ */
 function formatPrice(price) {
+  if (typeof price !== 'number') {
+    return 'N/A';
+  }
   if (price >= 1000) {
     return '$' + price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
@@ -28,8 +35,9 @@ function formatPrice(price) {
 }
 
 function renderPriceCard(coin, data) {
-  const price = data.usd;
-  const change = data.usd_24h_change ?? 0;
+  // Ensure we are passing a number (or handle if null)
+  const price = data && typeof data.usd === 'number' ? data.usd : null;
+  const change = data?.usd_24h_change ?? 0;
   const isUp = change >= 0;
   const arrow = isUp ? '▲' : '▼';
   const changeClass = isUp ? 'up' : 'down';
@@ -74,7 +82,7 @@ async function fetchPrices() {
     const data = await response.json();
 
     pricesGrid.innerHTML = COINS.map((coin) => {
-      if (!data[coin.id]) return '';
+      // Pass the nested object to the renderer
       return renderPriceCard(coin, data[coin.id]);
     }).join('');
 
