@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web3 Concepts — ChainLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⛓</div>
+        ChainLearn
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="prices.html">Live Prices</a></li>
+        <li><a href="simulator.html">Block Simulator</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Core Web3 Concepts</h1>
+        <p>
+          Side-by-side comparisons to help you understand the building blocks of
+          decentralized technology — explained simply, not like a textbook.
+        </p>
+      </div>
+
+      <div class="concepts-grid">
+        <!-- Web2 vs Web3 -->
+        <article class="concept-card">
+          <div class="concept-header">
+            <span class="concept-icon">🌐</span>
+            <h2>Web2 vs Web3</h2>
+          </div>
+          <div class="concept-body">
+            <div class="concept-side">
+              <h3>Web2 (Centralized)</h3>
+              <ul>
+                <li>Companies own and control your data on their servers</li>
+                <li>You need permission from platforms to build or participate</li>
+                <li>Accounts can be banned or data deleted at any time</li>
+                <li>Revenue flows to platform owners, not creators</li>
+              </ul>
+            </div>
+            <div class="concept-side alt">
+              <h3>Web3 (Decentralized)</h3>
+              <ul>
+                <li>You own your data, assets, and digital identity via wallets</li>
+                <li>Anyone can build on open protocols without asking</li>
+                <li>No single entity can shut you down or erase your history</li>
+                <li>Value is shared between users, developers, and token holders</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ethereum vs Bitcoin -->
+        <article class="concept-card">
+          <div class="concept-header">
+            <span class="concept-icon">₿</span>
+            <h2>Ethereum vs Bitcoin</h2>
+          </div>
+          <div class="concept-body">
+            <div class="concept-side">
+              <h3>Bitcoin</h3>
+              <ul>
+                <li>Created in 2009 as digital gold — a store of value</li>
+                <li>Designed primarily for peer-to-peer payments</li>
+                <li>Limited scripting — not built for complex applications</li>
+                <li>~10 minute block times, capped at ~7 transactions per second</li>
+              </ul>
+            </div>
+            <div class="concept-side alt">
+              <h3>Ethereum</h3>
+              <ul>
+                <li>Launched in 2015 as a programmable blockchain platform</li>
+                <li>Supports smart contracts — self-executing code on-chain</li>
+                <li>Powers DeFi, NFTs, DAOs, and thousands of dApps</li>
+                <li>Transitioned to Proof of Stake, enabling faster finality</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Public Key vs Private Key -->
+        <article class="concept-card">
+          <div class="concept-header">
+            <span class="concept-icon">🔑</span>
+            <h2>Public Key vs Private Key</h2>
+          </div>
+          <div class="concept-body">
+            <div class="concept-side">
+              <h3>Private Key</h3>
+              <ul>
+                <li>A secret 256-bit number — your password to the blockchain</li>
+                <li>Never share it with anyone; losing it means losing access forever</li>
+                <li>Used to sign transactions and prove you own an account</li>
+                <li>Think of it like the key to a safe only you can open</li>
+              </ul>
+            </div>
+            <div class="concept-side alt">
+              <h3>Public Key / Address</h3>
+              <ul>
+                <li>Derived from your private key through one-way cryptography</li>
+                <li>Safe to share — it's your wallet address for receiving funds</li>
+                <li>Others can verify your signatures without seeing your private key</li>
+                <li>Like a mailbox address: anyone can send mail, only you can open it</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blockchain vs Traditional Databases -->
+        <article class="concept-card">
+          <div class="concept-header">
+            <span class="concept-icon">🗄️</span>
+            <h2>Blockchain vs Traditional Databases</h2>
+          </div>
+          <div class="concept-body">
+            <div class="concept-side">
+              <h3>Traditional Database</h3>
+              <ul>
+                <li>Controlled by a single organization (Google, a bank, etc.)</li>
+                <li>Admins can edit, delete, or roll back records at will</li>
+                <li>Fast and efficient for internal business operations</li>
+                <li>Users must trust the company to handle data honestly</li>
+              </ul>
+            </div>
+            <div class="concept-side alt">
+              <h3>Blockchain</h3>
+              <ul>
+                <li>Data is replicated across thousands of independent nodes</li>
+                <li>Once confirmed, records are extremely difficult to alter</li>
+                <li>Slower and more expensive, but trustless and transparent</li>
+                <li>Anyone can verify the data — no need to trust a central authority</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        Built by <span>Shivaxi Dave</span> · Batch: Web3 Foundations
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/shivaxidave" target="_blank" rel="noopener">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="prices.html">Prices</a>
+        <a href="simulator.html">Simulator</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

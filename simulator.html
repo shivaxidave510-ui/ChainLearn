@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block Mining Simulator — ChainLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⛓</div>
+        ChainLearn
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="prices.html">Live Prices</a></li>
+        <li><a href="simulator.html">Block Simulator</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Block Mining Simulator</h1>
+        <p>
+          Mine blocks by finding a nonce that produces a hash starting with "00".
+          Then watch what happens when you tamper with Block 1 — that's immutability.
+        </p>
+      </div>
+
+      <div class="mine-info">
+        <strong>How it works:</strong> Click "Mine Block" to increment the nonce until
+        SHA-256 hash of (data + previous hash + nonce) starts with <code>00</code>.
+        Block 2 links to Block 1's hash — change Block 1's data and Block 2 breaks automatically.
+      </div>
+
+      <div class="simulator-grid">
+        <!-- Block 1 -->
+        <div class="block-panel" id="block1Panel">
+          <div class="block-panel-header">
+            <h3>🔗 Block 1</h3>
+            <span class="block-status pending" id="block1Status">Not Mined</span>
+          </div>
+          <div class="block-panel-body">
+            <div class="form-group">
+              <label for="block1Data">Block Data</label>
+              <input type="text" id="block1Data" value="Alice sends 5 ETH to Bob" placeholder="Enter transaction data">
+            </div>
+            <div class="form-group">
+              <label for="block1PrevHash">Previous Hash</label>
+              <input type="text" id="block1PrevHash" value="0000000000000000000000000000000000000000000000000000000000000000" readonly>
+            </div>
+            <div class="form-group">
+              <label for="block1Nonce">Nonce</label>
+              <input type="number" id="block1Nonce" value="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>Hash Output</label>
+              <div class="hash-output" id="block1Hash">—</div>
+            </div>
+            <button class="btn btn-primary" id="mineBlock1">⛏ Mine Block 1</button>
+            <div class="mining-indicator" id="mining1">
+              <span class="dot-pulse"></span> Mining…
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 2 -->
+        <div class="block-panel" id="block2Panel">
+          <div class="block-panel-header">
+            <h3>🔗 Block 2</h3>
+            <span class="block-status pending" id="block2Status">Not Mined</span>
+          </div>
+          <div class="block-panel-body">
+            <div class="form-group">
+              <label for="block2Data">Block Data</label>
+              <input type="text" id="block2Data" value="Bob sends 2 ETH to Charlie" placeholder="Enter transaction data">
+            </div>
+            <div class="form-group">
+              <label for="block2PrevHash">Previous Hash (from Block 1)</label>
+              <input type="text" id="block2PrevHash" value="" readonly placeholder="Mine Block 1 first">
+            </div>
+            <div class="form-group">
+              <label for="block2Nonce">Nonce</label>
+              <input type="number" id="block2Nonce" value="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>Hash Output</label>
+              <div class="hash-output" id="block2Hash">—</div>
+            </div>
+            <button class="btn btn-primary" id="mineBlock2" disabled>⛏ Mine Block 2</button>
+            <div class="mining-indicator" id="mining2">
+              <span class="dot-pulse"></span> Mining…
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chain-connector">
+        <span class="chain-line"></span>
+        Block 2's Previous Hash = Block 1's Hash Output
+        <span class="chain-line"></span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        Built by <span>Shivaxi Dave</span> · Batch: Web3 Foundations
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/shivaxidave" target="_blank" rel="noopener">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="prices.html">Prices</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/simulator.js"></script>
+</body>
+</html>

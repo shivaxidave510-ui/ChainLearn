@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Crypto Prices — ChainLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⛓</div>
+        ChainLearn
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="prices.html">Live Prices</a></li>
+        <li><a href="simulator.html">Block Simulator</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Live Crypto Prices</h1>
+        <p>
+          Real-time cryptocurrency prices powered by the CoinGecko API.
+          Data refreshes on page load and on demand.
+        </p>
+      </div>
+
+      <div class="prices-toolbar">
+        <span class="last-updated" id="lastUpdated">Loading…</span>
+        <button class="btn btn-primary" id="refreshBtn">↻ Refresh Prices</button>
+      </div>
+
+      <div id="errorContainer"></div>
+
+      <div class="prices-grid" id="pricesGrid">
+        <div class="loading-spinner">Fetching live prices…</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        Built by <span>Shivaxi Dave</span> · Batch: Web3 Foundations
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/shivaxidave" target="_blank" rel="noopener">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="simulator.html">Simulator</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/prices.js"></script>
+</body>
+</html>
