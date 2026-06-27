@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ChainLearn — Web3 Educational Website
 
 A four-page educational website exploring core Web3 concepts through interactive modules and live data. Built with plain HTML, CSS, and JavaScript — no build step required.
@@ -93,3 +94,6 @@ Then visit `http://localhost:8080` in your browser.
 - Vanilla JavaScript (Web Crypto API for SHA-256)
 - [CoinGecko Public API](https://api.coingecko.com/api/v3/simple/price) — no API key required
 - [Google Fonts — Inter](https://fonts.google.com/specimen/Inter)
+=======
+# ChainLearn
+>>>>>>> 219c9b6852ba409b814501ea7bee1a21a53d93cf
